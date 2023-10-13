@@ -1,16 +1,21 @@
 from Formatting import *
 from Generation import *
-from Statistics import *
+from macrocycle import *
 
 def main():
 
-    peptideScaffold = "AI*DH*XL"
-    buildingBlockList = ["ADHK","ZJK"]
+    peptideScaffold = "AA*DA*WY"
+    buildingBlockList = ["ARN","KMF"]
     #TODO import and format both input values
     
-    for peptide in generate_library(peptideScaffold=peptideScaffold,buildingBlockList=buildingBlockList):
-        print(peptide)
-        #TODO Run statistic analysis on each peptide and add it to a database with a unique identifier
+    for sequence in generate_library(peptideScaffold=peptideScaffold,buildingBlockList=buildingBlockList):
+        with macrocycle(sequence) as peptide:
+            #print(peptide.vars["peptide_sequence"])
+            #print(peptide.vars["smiles"])
+            #print(peptide.vars["molecule"])
+            peptide.calculate_score()
+            print(sequence, peptide.vars["score"])
+
 
 if __name__ == "__main__":
     main()

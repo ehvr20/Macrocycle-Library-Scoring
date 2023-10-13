@@ -13,4 +13,4 @@ def generate_library(peptideScaffold, buildingBlockList):
             charList.append([char])
     
     for string in product(*charList):
-        yield "-".join(string)
+        yield "".join(string)
