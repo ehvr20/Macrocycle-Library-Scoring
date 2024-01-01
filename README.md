@@ -15,9 +15,7 @@ A python script to generate a complete library from provided scaffolds and build
 pip install required packages using requirement.txt
 
 <pre>
-```bash
 pip install -r requirements.txt
-```
 </pre>
 
 ## Features
