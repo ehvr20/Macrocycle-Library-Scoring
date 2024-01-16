@@ -68,6 +68,8 @@ def main(input_file, output_path=None):
                 continue
 
             score = QED.default(macrocycle)
+            #score = QED.qed(macrocycle, w=(0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95))
+            #score = QED.weights_max(macrocycle)
             properties = QED.properties(macrocycle)
 
             # Create a new row for the DataFrame
@@ -102,3 +104,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
     main(args.input_file, args.output_file)
     exit()
+
+
+#TODO
+# RING formation
+# Isomerisation
+# Entropy optimize weight for macrocycles
+# SMILES ENTRY FORMAT
+# Unnatural Aminio Acids
+    
+    L and D amino acids
